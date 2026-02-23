@@ -20,6 +20,6 @@ public class ActivityController {
     @PostMapping
     public ResponseEntity<ActivityResponseDTO> trackActivity(@RequestBody ActivityRequest request){
 
-        return ResponseEntity.ok(activityService.track(request);
+        return ResponseEntity.ok(activityService.track(request));
     }
 }
