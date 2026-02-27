@@ -2,6 +2,7 @@ package com.fitness.userservice.service;
 
 import com.fitness.userservice.dto.RegisterRequest;
 import com.fitness.userservice.dto.UserResponseDTO;
+import com.fitness.userservice.exceptions.UserNotFoundException;
 import com.fitness.userservice.models.User;
 import com.fitness.userservice.repos.UserRepository;
 import lombok.AllArgsConstructor;
@@ -28,5 +29,9 @@ public class UserService {
           return new UserResponseDTO(userRepository.save(user));
 
 
+    }
+
+    public Boolean validateuser(String userId) {
+        return userRepository.existsById(userId);
     }
 }
